@@ -1,2 +1,4 @@
-.json.bak
-.json
+*.json.bak
+*.json
+/.dbeaver
+*.exe
