@@ -1,4 +1,4 @@
-# Datenanalyse zur Verbesserung des Category Managements im Einzelhandel und E-Commerce
+# Lernproject: BI-System für das Category Management
 
 ## Einleitung
 ### Ziel des Projekts
