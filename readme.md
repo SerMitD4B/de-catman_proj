@@ -14,8 +14,6 @@ Das Category Management spielt eine entscheidende Rolle im Einzelhandel und E-Co
 - Power BI/Tableau
 - Excel
 - PostgreSQL
-- Google Analytics (für E-Commerce-Daten)
-- APIs für E-Commerce-Plattformen (z.B. Shopify, WooCommerce)
 
 ### Daten
 Daten zu Verkäufen, Beständen, Preisen, Marketingaktionen, demografischen Daten der Kunden und Online-Interaktionen (z.B. Website-Traffic, Konversionsraten).
