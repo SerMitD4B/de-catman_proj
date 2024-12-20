@@ -1,11 +1,11 @@
-# Data Analysis for Improving Category Management in Retail and E-Commerce
+# Learn Project: BI System in Category Management
 
 ## Introduction
 ### Project Goal
-The goal is to define and analyze key performance indicators (KPIs) for managing product categories in retail and e-commerce using data analysis methods.
+The aim of this learning project, which focuses on building a BI system for category management, is to develop the skills and knowledge required for data modelling, collection, cleansing, transformation and analysis techniques.
 
 ### Context
-Category management plays a crucial role in retail and e-commerce by optimizing the product assortment and managing inventory. Data analysis allows for making informed decisions based on real metrics and optimizing both in-store and online sales.
+Category management plays a crucial role by optimizing the product assortment and managing inventory. Data analysis allows for making informed decisions based on real metrics and optimizing both in-store and online sales.
 
 ## Methods and Tools
 ### Technologies
@@ -16,7 +16,7 @@ Category management plays a crucial role in retail and e-commerce by optimizing 
 - PostgreSQL
 
 ### Data
-Data on sales, inventory, prices, marketing campaigns.
+Data on sales, inventory, prices, marketing campaigns, purchasing.
 
 ## Data Analysis
 ### Data Collection
@@ -39,6 +39,9 @@ Investigation of the impact of pricing strategies on sales volume and profit for
 
 ### Marketing Analysis
 Analysis of the effectiveness of marketing campaigns (e.g., online ads, newsletters) and their impact on the sales of various product categories.
+
+### MPurchasing Analysis
+
 
 ## Results and Recommendations
 ### Analysis Results
@@ -63,3 +66,8 @@ Screenshots of interactive dashboards created in Power BI or Tableau.
 
 ### Additional Materials
 Presentations, reports, and other materials prepared as part of the project.
+
+
+![Data model](data_model-1.jpg)
+
+The Shema was developed on the sqldbm.com platform.
