@@ -33,7 +33,7 @@ CREATE INDEX FK_2 ON sales_fact
 
 
 -- ************************************** calendar_dim
-CREATE TABLE calendar_dim
+CREATE TABLE dw.calendar_dim
 (
  date_id  serial NOT NULL,
  year     int NOT NULL,
@@ -150,9 +150,9 @@ CREATE TABLE promo_campaign_fact
 );
 
 -- ************************************** promo_campaign_set_fact
-CREATE TABLE promo_campaign_set_fact
+CREATE TABLE dw.promo_campaign_set_fact
 (
- sett_id      NOT NULL,
+ sett_id 	 serial NOT NULL,
  promo_id    int NOT NULL,
  geo_id      int NOT NULL,
  category_id int NOT NULL,
@@ -227,24 +227,24 @@ CREATE INDEX FK_2 ON purchase_fact
  product_id
 );
 
--- ************************************** sales_fact
-CREATE TABLE sales_fact
-(
- sales_id    serial NOT NULL,
- order_id    int NOT NULL,
- order_date  date NOT NULL,
- product_id  int NOT NULL,
- quantity    int NOT NULL,
- sales       numeric(12,2) NOT NULL,
- cogs        numeric(12,2) NOT NULL,
- profit      numeric(12,2) NOT NULL,
- discount    numeric(12,2) NOT NULL,
- expenses    numeric(12,2) NOT NULL,
- customer_id int NOT NULL,
- CONSTRAINT PK_10 PRIMARY KEY ( sales_id ),
- CONSTRAINT FK_8 FOREIGN KEY ( product_id ) REFERENCES products_dim ( product_id ),
- CONSTRAINT FK_9 FOREIGN KEY ( customer_id ) REFERENCES customers_dim ( customer_id )
-);
+	-- ************************************** sales_fact
+	CREATE TABLE sales_fact
+	(
+	 sales_id    serial NOT NULL,
+	 order_id    int NOT NULL,
+	 order_date  date NOT NULL,
+	 product_id  int NOT NULL,
+	 quantity    int NOT NULL,
+	 sales       numeric(12,2) NOT NULL,
+	 cogs        numeric(12,2) NOT NULL,
+	 profit      numeric(12,2) NOT NULL,
+	 discount    numeric(12,2) NOT NULL,
+	 expenses    numeric(12,2) NOT NULL,
+	 customer_id int NOT NULL,
+	 CONSTRAINT PK_10 PRIMARY KEY ( sales_id ),
+	 CONSTRAINT FK_8 FOREIGN KEY ( product_id ) REFERENCES products_dim ( product_id ),
+	 CONSTRAINT FK_9 FOREIGN KEY ( customer_id ) REFERENCES customers_dim ( customer_id )
+	);
 
 CREATE INDEX FK_1 ON sales_fact
 (
@@ -274,3 +274,31 @@ CREATE INDEX FK_1 ON suppliers_dim
 (
  geo_id
 );
+
+-- ************************************** products_dim
+CREATE TABLE products_dim
+(
+ product_id       serial NOT NULL,
+ product_name     varchar(100) NOT NULL,
+ description      text NULL,
+ price            numeric(12,2) NOT NULL,
+ cost_price       numeric(12,2) NOT NULL,
+ reorder_level    int NOT NULL,
+ reorder_quantity int NOT NULL,
+ category_id      int NOT NULL,
+ supplier_id      int NOT NULL,
+ CONSTRAINT PK_3 PRIMARY KEY ( product_id ),
+ CONSTRAINT FK_2 FOREIGN KEY ( category_id ) REFERENCES category_dim ( category_id ),
+ CONSTRAINT FK_5 FOREIGN KEY ( supplier_id ) REFERENCES suppliers_dim ( supplier_id )
+);
+
+CREATE INDEX FK_1 ON products_dim
+(
+ category_id
+);
+
+CREATE INDEX FK_2 ON products_dim
+(
+ supplier_id
+);
+
