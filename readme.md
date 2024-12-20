@@ -1,65 +1,65 @@
-# Lernproject: BI-System für das Category Management
+# Data Analysis for Improving Category Management in Retail and E-Commerce
 
-## Einleitung
-### Ziel des Projekts
-Ziel ist es, die Schlüsselkennzahlen für das Management von Warengruppen im Einzelhandel und E-Commerce mithilfe von Methoden der Datenanalyse zu definieren und zu analysieren.
+## Introduction
+### Project Goal
+The goal is to define and analyze key performance indicators (KPIs) for managing product categories in retail and e-commerce using data analysis methods.
 
-### Kontext
-Das Category Management spielt eine entscheidende Rolle im Einzelhandel und E-Commerce, da es die Optimierung des Sortiments und die Bestandsverwaltung ermöglicht. Die Datenanalyse erlaubt es, fundierte Entscheidungen basierend auf realen Kennzahlen zu treffen und sowohl stationäre als auch Online-Verkäufe zu optimieren.
+### Context
+Category management plays a crucial role in retail and e-commerce by optimizing the product assortment and managing inventory. Data analysis allows for making informed decisions based on real metrics and optimizing both in-store and online sales.
 
-## Methoden und Werkzeuge
-### Technologien
+## Methods and Tools
+### Technologies
 - SQL
 - Python
 - Power BI/Tableau
 - Excel
 - PostgreSQL
 
-### Daten
-Daten zu Verkäufen, Beständen, Preisen, Marketingaktionen, demografischen Daten der Kunden und Online-Interaktionen (z.B. Website-Traffic, Konversionsraten).
+### Data
+Data on sales, inventory, prices, marketing campaigns.
 
-## Datenanalyse
-### Datenerfassung
-Beschreibung des Prozesses der Datenerfassung, einschließlich der Datenquellen und der Methoden der Datenextraktion sowohl für stationären Handel als auch E-Commerce-Plattformen.
+## Data Analysis
+### Data Collection
+Description of the data collection process, including data sources and extraction methods for both brick-and-mortar and e-commerce platforms.
 
-### Datenbereinigung
-Beschreibung der Schritte zur Bereinigung und Vorbereitung der Daten für die Analyse.
+### Data Cleaning
+Steps for cleaning and preparing data for analysis.
 
-### Datenvisualisierung
-Erstellung interaktiver Dashboards zur Visualisierung der Schlüsselkennzahlen (KPI) für Einzelhandel und E-Commerce.
+### Data Visualization
+Creation of interactive dashboards to visualize KPIs for retail and e-commerce.
 
-### Verkaufsanalyse
-Untersuchung der Verkaufsdaten zur Bestimmung der Rentabilität und Leistung verschiedener Warengruppen in stationären und Online-Verkäufen.
+### Sales Analysis
+Examination of sales data to determine the profitability and performance of various product categories in both offline and online sales.
 
-### Bestandsanalyse
-Bestimmung optimaler Bestandsniveaus zur Minimierung der Kosten und Vermeidung von Engpässen, einschließlich Überwachung von Lagerbeständen in Echtzeit.
+### Inventory Analysis
+Determination of optimal inventory levels to minimize costs and avoid stockouts, including real-time inventory monitoring.
 
-### Preisanalyse
-Untersuchung der Auswirkungen von Preisstrategien auf Verkaufsvolumen und Gewinn, sowohl für den stationären Handel als auch für E-Commerce.
+### Price Analysis
+Investigation of the impact of pricing strategies on sales volume and profit for both retail and e-commerce.
 
-### Marketinganalyse
-Analyse der Effektivität von Marketingaktionen (z.B. Online-Kampagnen, Newsletter) und deren Einfluss auf den Verkauf verschiedener Warengruppen.
+### Marketing Analysis
+Analysis of the effectiveness of marketing campaigns (e.g., online ads, newsletters) and their impact on the sales of various product categories.
 
-## Ergebnisse und Empfehlungen
-### Analyseergebnisse
-Darstellung der wichtigsten Erkenntnisse und Analyseergebnisse für stationären Handel und E-Commerce.
+## Results and Recommendations
+### Analysis Results
+Presentation of key insights and analysis results for both retail and e-commerce.
 
-### Empfehlungen
-Entwicklung von Empfehlungen zur Optimierung des Category Managements auf Basis der erhaltenen Daten und Analysen. Vorschläge zur Verbesserung des Sortiments, der Bestandsverwaltung, der Preisgestaltung und der Marketingstrategien für beide Vertriebskanäle.
+### Recommendations
+Development of recommendations for optimizing category management based on the data and analysis. Suggestions for improving the assortment, inventory management, pricing, and marketing strategies for both channels.
 
-## Schlussfolgerung
-### Fazit
-Zusammenfassung der Projektergebnisse und deren Bedeutung für das Category Management im Einzelhandel und E-Commerce.
+## Conclusion
+### Summary
+Summarization of the project results and their significance for category management.
 
-### Zukünftige Richtungen
-Beschreibung möglicher weiterer Forschung und Verbesserungen des Projekts.
+### Future Directions
+Description of possible further research and improvements to the project.
 
-## Anhänge
+## Appendices
 ### Code
-Einbindung der SQL- und Python-Skripte, die zur Datenanalyse verwendet wurden.
+Inclusion of SQL and Python scripts used for data analysis.
 
 ### Dashboards
-Screenshots der interaktiven Dashboards, die in Power BI oder Tableau erstellt wurden.
+Screenshots of interactive dashboards created in Power BI or Tableau.
 
-### Zusätzliche Materialien
-Präsentationen, Berichte und andere Materialien, die im Rahmen des Projekts erstellt wurden.
+### Additional Materials
+Presentations, reports, and other materials prepared as part of the project.
