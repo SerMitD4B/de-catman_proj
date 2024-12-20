@@ -69,5 +69,4 @@ Presentations, reports, and other materials prepared as part of the project.
 
 
 ![Data model](data_model-1.jpg)
-
-The Shema was developed on the sqldbm.com platform.
+The data model was built on the sqldbm.com platform.
