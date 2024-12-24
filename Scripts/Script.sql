@@ -16,12 +16,13 @@ CREATE TABLE dw.calendar_dim
 
 -- ************************************** group_dim
 
+
 CREATE TABLE dw.group_dim
 (
  group_id    serial NOT NULL,
  group_name  varchar(100) NOT NULL,
  description text NULL,
- created_at  timestamp NOT NULL,
+ created_at  timestamp DEFAULT CURRENT_TIMESTAMP NOT NULL,
  CONSTRAINT PK_group_dim PRIMARY KEY ( group_id )
 );
 
@@ -233,4 +234,57 @@ CREATE INDEX FK_promo_cam_set_fact_suppliers_dim ON promo_campaign_set_fact
  supplier_id
 );
 
+-- ************************************** promo_sales_fact
+CREATE TABLE dw.promo_sales_fact
+(
+ promo_sales_id serial NOT NULL,
+ order_id       int NOT NULL,
+ promo_id       int NOT NULL,
+ CONSTRAINT PK_promo_sales_fact PRIMARY KEY ( promo_sales_id ),
+ CONSTRAINT FK_promo_campaign_fact FOREIGN KEY ( promo_id ) REFERENCES promo_campaign_fact ( promo_id )
+);
 
+CREATE INDEX FK_promo_sales_campaign_fact ON promo_sales_fact
+(
+ promo_id
+);
+
+
+-- ************************************** purchase_fact
+CREATE TABLE dw.purchase_fact
+(
+ purchase_id   serial NOT NULL,
+ order_id      int NOT NULL,
+ order_date    date NOT NULL,
+ delivery_date date NOT NULL,
+ supplier_id   int NOT NULL,
+ product_id    int NOT NULL,
+ quantity      int NOT NULL,
+ cost_price    numeric(12,2) NOT NULL,
+ status_id     int NOT NULL,
+ created_at    timestamp NOT NULL,
+ CONSTRAINT PK_purchase_fact PRIMARY KEY ( purchase_id ),
+ CONSTRAINT FK_suppliers_dim FOREIGN KEY ( supplier_id ) REFERENCES suppliers_dim ( supplier_id ),
+ CONSTRAINT FK_products_dim FOREIGN KEY ( product_id ) REFERENCES products_dim ( product_id )
+);
+
+-- ************************************** sales_fact
+
+
+CREATE TABLE dw.sales_fact
+(
+ sales_id    serial NOT NULL,
+ order_id    int NOT NULL,
+ order_date  date NOT NULL,
+ product_id  int NOT NULL,
+ quantity    int NOT NULL,
+ sales       numeric(12,2) NOT NULL,
+ cogs        numeric(12,2) NOT NULL,
+ profit      numeric(12,2) NOT NULL,
+ discount    numeric(12,2) NOT NULL,
+ expenses    numeric(12,2) NOT NULL,
+ customer_id int NOT NULL,
+ CONSTRAINT PK_sales_fact PRIMARY KEY ( sales_id ),
+ CONSTRAINT FK_products_dim FOREIGN KEY ( product_id ) REFERENCES products_dim ( product_id ),
+ CONSTRAINT FK_customers_dim FOREIGN KEY ( customer_id ) REFERENCES customers_dim ( customer_id )
+);
