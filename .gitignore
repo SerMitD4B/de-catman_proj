@@ -3,3 +3,5 @@
 /.dbeaver
 *.exe
 *.txt
+test.py
+sales_gen.py
