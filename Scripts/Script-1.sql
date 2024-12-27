@@ -160,6 +160,46 @@ group by 1
 create table sandbox.sales_fact as table dw.sales_fact
 with no data
 
-SELECT version()
+-- orders_fact
+create table dw.orders_fact
+(
+ order_id serial not null,
+ order_date date not null,
+ expences numeric(12,2),
+ customer_id int not null,
+ created_at timestamp default current_timestamp,
+ constraint PK_orders_fact primary key (order_id),
+ constraint FK_orders_fact_customers_dim foreign key (customer_id) references dw.customers_dim (customer_id)
+)
 
--- data to daily_inventory_fact
+-- backorders_fact
+create table dw.backorders_fact
+(
+ backorder_id serial not null,
+ quantity int not null,
+ date_backorder date not null,
+ product_id int not null,
+ customer_id int not null,
+ constraint PK_backorders_fact primary key (backorder_id),
+ constraint FK_backorders_fact_products_dim foreign key (product_id) references dw.products_dim (product_id),
+ constraint FK_backorders_fact_customers_dim foreign key (customer_id) references dw.customers_dim (customer_id) 
+)
+
+--sandbox
+create table sandbox.backorders_fact as 
+select * 
+from dw.backorders_fact bf 
+
+create table sandbox.orders_fact as
+select *
+from dw.orders_fact of2 
+
+drop table sandbox.sales_fact
+
+create table sandbox.sales_fact as
+select * 
+from dw.sales_fact sf 
+
+create table sandbox.daily_inventory_fact as
+select *
+from dw.daily_inventory_fact dif 
