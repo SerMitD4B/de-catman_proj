@@ -9,7 +9,7 @@ conn = pg8000.native.Connection(
     host="localhost", 
     port=5432 )
 
-inventory_set = list(conn.run("select product_id from sandbox.inventory_fact where quantity > 0"))
+inventory_set = conn.run("select product_id from sandbox.inventory_fact where quantity > 0")
 print(f'Number of products on stock: {len(inventory_set)}')
 print(type(inventory_set))
 print(inventory_set)
