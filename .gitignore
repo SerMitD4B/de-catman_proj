@@ -1,6 +1,6 @@
 *.json.bak
 *.json
-/.dbeaver
+.dbeaver /
 *.exe
 *.txt
 test.py

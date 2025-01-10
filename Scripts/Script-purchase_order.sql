@@ -56,10 +56,27 @@ where status != 'completed'
 group by supplier_id
 order by sum(cost_price) desc
 
-select distinct status, sum(cost_price) 
-from sandbox.purchase_fact
-group by 1
 
+SELECT inv_prod_id, inv_cost, inv_quantity, price, cost_price, inv_cost/inv_quantity as cost_price_1
+FROM (
+	(select product_id as inv_prod_id, cost_price as inv_cost, quantity as inv_quantity from sandbox.inventory_fact
+	where product_id in (1, 2, 5)) inv
+	left join dw.products_dim pd on inv_prod_id = pd.product_id 
+	) t1
+
+SELECT inv_prod_id, inv_cost_price, quantity, price 
+                            FROM (
+                                  (select product_id as inv_prod_id, cost_price as inv_cost_price, quantity from sandbox.inventory_fact
+	                               where product_id in (1, 2, 5)) inv
+	                            left join dw.products_dim pd on inv_prod_id = pd.product_id 
+	                            ) t1
+
+-- get backorders qty
+select product_id, sum(quantity)
+from sandbox.backorders_fact bf
+group by 1
+order by 2 desc 
+	
 /*
 insert into sandbox.purchase_fact (order_date, delivery_date, supplier_id, product_id, quantity, cost_price)
 values(current_date, (current_date + 28), 5, 44, 94, 32.04)

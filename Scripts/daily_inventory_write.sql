@@ -110,12 +110,7 @@ left join (
 		sum(quantity) as sum_back_qty
 	from sandbox.backorders_fact
 	group by 1) as backorder_fact
-	on inv2.inv_month = backorder_fact.backorder_month
-
-select 
-	count(distinct order_id)  / 366
-from sandbox.sales_fact sf
-	
+	on inv2.inv_month = backorder_fact.backorder_month	
 	
 select distinct inventory_date, quantity --count(*)
 from sandbox.daily_inventory_fact
@@ -123,10 +118,22 @@ where product_id = 1
 --group by 1
 order by 1
 
-select distinct date_trunc('second', created_at), count(*)
+
+select distinct date_trunc('month', order_date), count(*) / 30
 from orders_fact of2 
 group by 1
 order by 1
+
+select *
+from dw.category_dim cd 
+order by 1
+
+select 
+	distinct customer_id, 
+	count(distinct order_id)
+from sandbox.sales_fact
+group by 1
+order by 2 desc 
 
 SELECT inv_prod_id, inv_cost_price, quantity, price, cost_price
                             FROM (

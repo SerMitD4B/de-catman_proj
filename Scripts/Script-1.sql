@@ -107,26 +107,6 @@ order by 2 desc
 insert into dw.inventory_fact (inventory_id, product_id, quantity, cost_price)
 select inventory_id, product_id, quantity, cost_price_amount from public_old.inventory i 
 
-select 
-	distinct country,
-	count(*),
---	product_name,
-	sum(cost_price)
-from (
-	select pd.product_name, gd.country, if2.cost_price 
-	from dw.inventory_fact if2 
-	left join dw.products_dim pd 
-	using(product_id) 
-	left join dw.suppliers_dim sd 
-	using(supplier_id)
-	left join dw.geo_dim gd 
-	using(geo_id)
-	) t1
---where country = 'Germany'
-group by 1
-order by 3 desc
-
-
 -- calendar
 --truncate table dw.calendar_dim;
 --

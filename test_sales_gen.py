@@ -10,7 +10,7 @@ conn = pg8000.native.Connection(
     host="localhost", 
     port=5432 )
 # read all date of year 2016 from calendar 
-date_set = conn.run("SELECT date, month FROM dw.calendar_dim where year = 2016")
+date_set = conn.run("SELECT date, month FROM dw.calendar_dim where year = 2017")
 print('qty days in year = ', len(date_set))
 expenses = 3 # additional expenses pro order in 2016
 
@@ -19,12 +19,12 @@ customer_ids_set = conn.run("select customer_id from dw.customers_dim")
 print(f'Number of Customers:{len(customer_ids_set)}')
 
 # read products
-product_ids_set = conn.run("select product_id, price, cost_price from dw.products_dim")
-print(f'Number of products:{len(product_ids_set)}')
+#product_ids_set = conn.run("select product_id, price, cost_price from dw.products_dim where reorder_quantity > 0")
+#print(f'Number of products:{len(product_ids_set)}')
 
 day = 0
-order_qty_day_min = order_qty_day_start = 160     # min order qty per day, start for 2016                   
-factor_orders_day = 0.05    # increase factor 5% pro month
+order_qty_day_min = order_qty_day_start = 700   # min order qty per day, start for 2016                   
+factor_orders_day = 0.05    # increase factor 3% pro month
 month = 1
 month_act = 0
 
@@ -40,6 +40,9 @@ for day in range(len(date_set)): #range(60):
     if month != month_act:
         month_act = month
         order_qty_day_min = order_qty_day_min + round(order_qty_day_start * ((month_act - 1) * factor_orders_day))
+        # read products set
+        product_ids_set = conn.run("select product_id, price, cost_price from dw.products_dim where reorder_quantity > 0")
+        print(f'Number of products:{len(product_ids_set)}')
     
     #random qty orders per each day-  diff between min and max = 20%.
     order_qty = random.randint(order_qty_day_min, round(order_qty_day_min * 1.2)) 
