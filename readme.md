@@ -68,5 +68,5 @@ Screenshots of interactive dashboards created in Power BI or Tableau.
 Presentations, reports, and other materials prepared as part of the project.
 
 
-![Data model](data_model-1.jpg)
+![Data model](data_model-main.jpg)
 The data model was built on the sqldbm.com platform.
