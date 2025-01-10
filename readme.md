@@ -8,13 +8,13 @@ The aim of this learning project is to develop the skills and knowledge required
 Category management plays a crucial role by optimizing the product assortment and managing inventory. Data analysis allows for making informed decisions based on real metrics and optimizing both in-store and online sales.
 
 ## Methods and Tools
-### Technologies
+### Tools
 - PostgreSQL
 - SQL, Python, Excel
 - Power BI
 
 ### Data
-Data (sales, inventory, purchasing) were generated using Python + SQL.
+Data (sales, inventory, purchasing) has been generated and written to PostgreSQL using Python + SQL.
 
 ## Data Analysis
 ### Data Collection
@@ -41,7 +41,8 @@ Summarization of the project results and their significance for category managem
 Inclusion of SQL and Python scripts used for data analysis.
 
 ### Dashboards
-Screenshots of interactive dashboards created in Power BI or Tableau.
+Screenshots of interactive dashboards created in Power BI will be presented here.
+
 
 ### Data model
 ![Data model](data_model-main.jpg)
